@@ -18,7 +18,7 @@ public class BingoTicketGen {
         FileWriter fileWriter = new FileWriter(inputFile);
         BufferedWriter bw = new BufferedWriter(fileWriter);
         for (int i = 1; i <= noOfTickets; i++) {
-            Random r1 = new Random(System.currentTimeMillis());
+            Random r1 = new Random(System.currentTimeMillis() + i);
             int[][] ticket = new int[3][9];
             Set<Integer> firstRowColFillIndexes = r1.ints(0, 9)
                     .distinct().limit(5).boxed().collect(Collectors.toSet());
